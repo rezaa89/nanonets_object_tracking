@@ -46,7 +46,7 @@ class deepsort_rbc():
 		print("Deep sort model loaded")
 
 		self.metric = nn_matching.NearestNeighborDistanceMetric("cosine",.5 , 100)
-		self.tracker= Tracker(self.metric)
+		self.tracker= Tracker(self.metric, max_age = 100)
 
 		self.gaussian_mask = get_gaussian_mask().cuda()
 
