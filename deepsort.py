@@ -160,7 +160,7 @@ class deepsort_rbc():
 
 	def run_deep_sort(self, frame, out_scores, out_boxes):
 
-		if out_boxes==[]:			
+		if len(out_boxes)==0:			
 			self.tracker.predict()
 			print('No detections')
 			trackers = self.tracker.tracks
