@@ -168,7 +168,7 @@ class deepsort_rbc():
 
 		detections = np.array(out_boxes)
 		#features = self.encoder(frame, detections.copy())
-
+		print(detections.shape, frame.shape)
 		processed_crops = self.pre_process(frame,detections).cuda()
 		processed_crops = self.gaussian_mask * processed_crops
 
