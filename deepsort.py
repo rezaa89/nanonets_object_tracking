@@ -164,7 +164,7 @@ class deepsort_rbc():
 			self.tracker.predict()
 			print('No detections')
 			trackers = self.tracker.tracks
-			return trackers
+			return trackers, []
 
 		detections = np.array(out_boxes)
 		#features = self.encoder(frame, detections.copy())
@@ -173,7 +173,7 @@ class deepsort_rbc():
 			self.tracker.predict()
 			print('No detections')
 			trackers = self.tracker.tracks
-			return trackers
+			return trackers, []
 		processed_crops = self.pre_process(frame,detections).cuda()
 		processed_crops = self.gaussian_mask * processed_crops
 
