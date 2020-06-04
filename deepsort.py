@@ -168,7 +168,7 @@ class deepsort_rbc():
 
 		detections = np.array(out_boxes)
 		#features = self.encoder(frame, detections.copy())
-		print(detections.shape, frame.shape)
+		print('size ', detections.shape, frame.shape)
 		if detections.shape[0]==0:			
 			self.tracker.predict()
 			print('No detections')
