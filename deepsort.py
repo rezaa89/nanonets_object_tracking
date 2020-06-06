@@ -33,7 +33,7 @@ def get_gaussian_mask():
 
 
 class deepsort_rbc():
-	def __init__(self,wt_path=None):
+	def __init__(self,wt_path=None, max_age = 180, matching_threshold = 0.5):
 		#loading this encoder is slow, should be done only once.
 		#self.encoder = generate_detections.create_box_encoder("deep_sort/resources/networks/mars-small128.ckpt-68577")		
 		if wt_path is not None:
@@ -45,7 +45,7 @@ class deepsort_rbc():
 		self.encoder = self.encoder.eval()
 		print("Deep sort model loaded")
 
-		self.metric = nn_matching.NearestNeighborDistanceMetric("cosine",.5 , 100)
+		self.metric = nn_matching.NearestNeighborDistanceMetric("cosine",matching_threshold = matching_threshold , budget = 100)
 		self.tracker= Tracker(self.metric, max_age = 180)
 
 		self.gaussian_mask = get_gaussian_mask().cuda()
