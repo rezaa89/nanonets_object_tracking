@@ -10,7 +10,7 @@ function and used as Mahalanobis gating threshold.
 """
 chi2inv95 = {
     1: 3.8415,
-    2: 5.9915,
+    2: 1.0,
     3: 7.8147,
     4: 1.0,
     5: 11.070,
@@ -18,7 +18,7 @@ chi2inv95 = {
     7: 14.067,
     8: 15.507,
     9: 16.919}
-# 9.4877
+# 5.9915 9.4877
 
 class KalmanFilter(object):
     """
