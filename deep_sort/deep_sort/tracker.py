@@ -111,7 +111,7 @@ class Tracker:
             cost_matrix = self.metric.distance(features, targets)
             cost_matrix = linear_assignment.gate_cost_matrix(
                 self.kf, cost_matrix, tracks, dets, track_indices,
-                detection_indices, only_positions = True)
+                detection_indices, only_position = True)
 
             return cost_matrix
 
