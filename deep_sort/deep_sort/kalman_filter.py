@@ -10,9 +10,9 @@ function and used as Mahalanobis gating threshold.
 """
 chi2inv95 = {
     1: 3.8415,
-    2: 0.001,
+    2: 5.9915,
     3: 7.8147,
-    4: 0.001,
+    4: 9.4877,
     5: 11.070,
     6: 12.592,
     7: 14.067,
@@ -186,7 +186,7 @@ class KalmanFilter(object):
         return new_mean, new_covariance
 
     def gating_distance(self, mean, covariance, measurements,
-                        only_position=True):
+                        only_position=False):
         """Compute gating distance between state distribution and measurements.
 
         A suitable distance threshold can be obtained from `chi2inv95`. If
