@@ -10,9 +10,9 @@ function and used as Mahalanobis gating threshold.
 """
 chi2inv95 = {
     1: 3.8415,
-    2: 2.0,
+    2: 0.1,
     3: 7.8147,
-    4: 4.0,
+    4: 0.1,
     5: 11.070,
     6: 12.592,
     7: 14.067,
